@@ -1,4 +1,4 @@
-{% set version = '2.0.1' %}
+{% set version = "2.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ecodist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ecodist/ecodist_{{ version }}.tar.gz
-  sha256: afb099c4484dbeef913bd187cb23ce805df56958431bffc27e392db244d9f112
+  sha256: 3d1d1fd599b2d5958ac5baf1c5e0df52574f577a62f205db00dcbbcd7dd414ba
 
 build:
   merge_build_host: True  # [win]
