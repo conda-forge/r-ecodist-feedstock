@@ -43,10 +43,11 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=ecodist
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Dissimilarity-based analysis functions including ordination and Mantel test functions, intended for use with spatial and community data.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
