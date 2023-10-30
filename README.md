@@ -3,6 +3,7 @@ About r-ecodist-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ecodist-feedstock/blob/main/LICENSE.txt)
 
+
 About r-ecodist
 ---------------
 
@@ -11,6 +12,7 @@ Home: https://CRAN.R-project.org/package=ecodist
 Package license: GPL-2.0-or-later
 
 Summary: Dissimilarity-based analysis functions including ordination and Mantel test functions, intended for use with spatial and community data.
+
 About r-ecodist
 ---------------
 
