@@ -1,4 +1,4 @@
-{% set version = "2.0.9" %}
+{% set version = "2.1.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,31 +10,32 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ecodist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ecodist/ecodist_{{ version }}.tar.gz
-  sha256: aee98bef390df0acdcbd17a73ddb6ad30aac860f225982036054f693d75be8d4
+  sha256: e0a27ead727152d11b0093301983c1d88d7a3ee6a6396268e8581100baf43d98
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ posix }}filesystem        # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ posix }}filesystem      # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ posix }}sed             # [win]
+    - {{ posix }}coreutils       # [win]
+    - {{ posix }}zip             # [win]
   host:
-    - libopenblas
+    - libblas
     - r-base
+    - r-igraph
   run:
-    - libopenblas
     - r-base
-    - {{ native }}gcc-libs         # [win]
+    - {{ native }}gcc-libs       # [win]
+    - r-igraph
 
 test:
   commands:
@@ -43,11 +44,13 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=ecodist
+  dev_url: https://github.com/phiala/ecodist
   license: GPL-2.0-or-later
   summary: Dissimilarity-based analysis functions including ordination and Mantel test functions, intended for use with spatial and community data.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
