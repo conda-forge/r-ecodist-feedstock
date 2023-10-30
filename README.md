@@ -13,6 +13,8 @@ Package license: GPL-2.0-or-later
 
 Summary: Dissimilarity-based analysis functions including ordination and Mantel test functions, intended for use with spatial and community data.
 
+Development: https://github.com/phiala/ecodist
+
 About r-ecodist
 ---------------
 
@@ -21,6 +23,8 @@ Home: https://CRAN.R-project.org/package=ecodist
 Package license: GPL-2.0-or-later
 
 Summary: Dissimilarity-based analysis functions including ordination and Mantel test functions, intended for use with spatial and community data.
+
+Development: https://github.com/phiala/ecodist
 
 Current build status
 ====================
