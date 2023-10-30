@@ -21,20 +21,21 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ posix }}filesystem        # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ posix }}filesystem      # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ posix }}sed             # [win]
+    - {{ posix }}coreutils       # [win]
+    - {{ posix }}zip             # [win]
   host:
-    - libopenblas
+    - libblas
     - r-base
+    - r-igraph
   run:
-    - libopenblas
     - r-base
-    - {{ native }}gcc-libs         # [win]
+    - {{ native }}gcc-libs       # [win]
+    - r-igraph
 
 test:
   commands:
@@ -43,11 +44,13 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=ecodist
+  dev_url: https://github.com/phiala/ecodist
   license: GPL-2.0-or-later
   summary: Dissimilarity-based analysis functions including ordination and Mantel test functions, intended for use with spatial and community data.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
